@@ -8,10 +8,6 @@ Para ello he creado dos directorios separados en los que estarán alojados la ve
 * *Web*: https://martinpulido.github.io/dropcast/web/index.html
 * *Vue*: https://martinpulido.github.io/dropcast/vue/index.html
 
-## Desarrollo
-
-En base al diseño *as-is* ofrecido por Symu.co, construimos una versión responsive del portal, para ello utilizaremos HTML, CSS puros, sin frameworks y JS con jQuery para dotar de funcionalidad básica.
-
 ## Herramientas utilizadas
 
 * [Git](https://git-scm.com/) - Como control de versiones a través de GitHub.
