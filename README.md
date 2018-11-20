@@ -10,6 +10,9 @@ Para ello he creado dos directorios separados en los que estarán alojados la ve
 
 ## Herramientas utilizadas
 
+* [NodeJS/NPM](https://nodejs.org/es/) - NodeJS como entorno de ejecución de JavaScript y NPM como gestor de paquetes.
+* [vue-cli](https://cli.vuejs.org/) - vue-cli con la plantilla oficial **webpack-simple** como *scaffolding* del proyecto
+* [SASS/SCSS](https://sass-lang.com/) - Como preprocesador de CSS.
 * [Git](https://git-scm.com/) - Como control de versiones a través de GitHub.
 
 ## Autores
