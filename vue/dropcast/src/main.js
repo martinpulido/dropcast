@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Navigation from './components/Navigation.vue'
+
+Vue.component('navigation', Navigation);
 
 new Vue({
   el: '#app',

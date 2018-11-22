@@ -3,19 +3,9 @@
     <div id="site__bg"></div>
     <div class="main">
 
-      <nav>
-        <div class="logo nav__logo">
-          <a href="index.html"><img src="assets/images/logo.svg" alt="logo"/></a>
-        </div>
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#">Episodes</a></li>
-        </ul>
-        <ul class="nav__social">
-          <li><a href="#" class="nav_social__item"><i class="fab fa-google-play"></i></a></li>
-          <li><a href="#" class="nav_social__item"><i class="fab fa-itunes-note"></i></a></li>
-          <li><a href="#" class="nav_social__item"><i class="fas fa-rss-square"></i></a></li>
-        </ul>
-      </nav>
+      <!-- Navigation component -->
+      <navigation>
+      </navigation>
       
     </div>
     
@@ -40,6 +30,11 @@ export default {
   }
 }
 </script>
+
+<style>
+  @import "https://use.fontawesome.com/releases/v5.0.6/css/all.css";
+  @import "https://fonts.googleapis.com/css?family=Rufina:400,700|Source+Sans+Pro:200,300,400,600,700";
+</style>
 
 <style lang="scss">
   @import "src/assets/scss/variable.scss";
