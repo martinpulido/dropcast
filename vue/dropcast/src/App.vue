@@ -6,6 +6,10 @@
       <!-- Navigation component -->
       <navigation>
       </navigation>
+
+      <!-- Site component -->
+      <site>
+      </site>
       
     </div>
     
@@ -40,5 +44,22 @@ export default {
   @import "src/assets/scss/variable.scss";
   @import "src/assets/scss/animation.scss";
   @import "src/assets/scss/base.scss";
-  @import "src/assets/scss/site.scss";
+
+  /* Small Devices, Tablets */
+  @media only screen and (min-width : 1000px) {
+    /* main page */
+    body {
+      position: relative;
+    }
+    
+    footer {
+      padding-left: 110px;
+      margin-bottom: -1rem;
+    }
+
+    .main {
+      display: flex;
+      padding-left: 60px;
+    }
+  }
 </style>
