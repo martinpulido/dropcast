@@ -1,48 +1,25 @@
 .episode {
   position: relative;
   display: flex;
-  &:nth-child(1) {
-    .episode__image {
-      background-image: url($imagesPath+'/photos/1_edited.png');
+
+  @for $i from 1 through 4 { // 'through' includes last item (4)
+    &:nth-child(#{$i}) {
+      .episode__image {
+        background-image: url($imagesPath+'/photos/#{$i}_edited.png');
+      }
     }
   }
-  &:nth-child(2) {
-    .episode__image {
-      background-image: url($imagesPath+'/photos/2_edited.png');
-    }
-  }
-  &:nth-child(3) {
-    .episode__image {
-      background-image: url($imagesPath+'/photos/3_edited.png');
-    }
-  }
-  &:nth-child(4) {
-    .episode__image {
-      background-image: url($imagesPath+'/photos/4_edited.png');
-    }
-  }
+  
   &:hover {
     .episode__detail:before {
       width: 100%;
     }
-    &:nth-child(1) {
-      .episode__image {
-        background-image: url($imagesPath+'/photos/1_original.png');
-      }
-    }
-    &:nth-child(2) {
-      .episode__image {
-        background-image: url($imagesPath+'/photos/2_original.png');
-      }
-    }
-    &:nth-child(3) {
-      .episode__image {
-        background-image: url($imagesPath+'/photos/3_original.png');
-      }
-    }
-    &:nth-child(4) {
-      .episode__image {
-        background-image: url($imagesPath+'/photos/4_original.png');
+
+    @for $i from 1 through 4 { // 'through' includes last item (4)
+      &:nth-child(#{$i}) {
+        .episode__image {
+          background-image: url($imagesPath+'/photos/#{$i}_original.png');
+        }
       }
     }
   }
@@ -77,7 +54,7 @@
     bottom: 0;
     left: 0;
     content: '';
-    //background-image: url(@/assets/images/pixel-corner.svg);
+    background-image: url($imagesPath+'/pixel-corner.svg');
     width: 50px;
     height: 50px;
     background-size: cover;
