@@ -26,7 +26,10 @@ Este proyecto está realizado bajo la licencia MIT.
 
 ## Observaciones
 
-* TODO: Incluir de otra forma los archivos scss comunes a todos los componentes (variables.scss, animation.scss) para no tener que re-incluirlos en cada componente creado.
 * Para no montar una API REST propia con unos datos propios (en realidad, los datos originales de la version 'web') voy a hacer uso de unos datos simulados de los que se pueden obtener desde [JSON Placeholder](https://jsonplaceholder.typicode.com/).
-* Para las fotos de los 'autores' se van a utilizar las que provee la plantilla, cambiándolas el nombre para usarlas según los datos simulados que se obtengan desde JSON Placeholder.
+* Para las fotos de los 'autores' se van a utilizar las que provee la plantilla, cambiándolas el nombre para usarlas según los datos simulados que se obtengan desde JSON Placeholder. Además, a las correspondientes al estado *hover* se les va a añadir un sufijo '_hover' para que convivan en el mismo directorio con las de estado normal.
+
+## TODO
+* Incluir de otra forma los archivos scss comunes a todos los componentes (variables.scss, animation.scss) para no tener que re-incluirlos en cada componente creado.
+* Investigar cómo hacer que VueJS coja la estructura de los assets en entorno de desarrollo (*/images/photos/original/1.png , /images/photos/edited/1.png, etc*) para diferenciar las imagenes que se llaman igual, pero que están en directorios distintos.
 
