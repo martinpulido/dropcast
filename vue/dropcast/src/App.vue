@@ -10,6 +10,10 @@
       <!-- Site component -->
       <site>
       </site>
+
+      <!-- Episodes component -->
+      <episodes>
+      </episodes>
       
     </div>
     
