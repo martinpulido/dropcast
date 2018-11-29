@@ -116,13 +116,21 @@
   }
 }
 
-.episode__title h4{
-  font-size: 1.6rem;
-  margin: 1rem 0 .3rem 0;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: $gray;
+.episode__title {
   &:hover {
-    color: $purple;
+    text-decoration: none;
+  }
+  
+  h4{
+    font-size: 1.6rem;
+    margin: 1rem 0 .3rem 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $gray;
+    transition: color .3s ease-in-out;
+    &:hover {
+      color: $purple;
+      transition: color .3s ease-in-out;
+    }
   }
 }
 
