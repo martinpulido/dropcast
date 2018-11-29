@@ -32,4 +32,6 @@ Este proyecto está realizado bajo la licencia MIT.
 ## TODO
 * Incluir de otra forma los archivos scss comunes a todos los componentes (variables.scss, animation.scss) para no tener que re-incluirlos en cada componente creado.
 * Investigar cómo hacer que VueJS coja la estructura de los assets en entorno de desarrollo (*/images/photos/original/1.png , /images/photos/edited/1.png, etc*) para diferenciar las imagenes que se llaman igual, pero que están en directorios distintos.
+* Cambiar para que las imágenes de *Episodes*, en lugar de cargarse como fondo, se carguen como contenido.
+* Relacionado con el punto anterior, el estado 'editado' (estado normal) de las imagenes de *Episodes* se podría hacer con filtros CSS (quitandolo en el estado 'hover'). Asi ahorraríamos peticiones al servidor.
 
