@@ -41,23 +41,6 @@ a {
   }
 }
 
-footer {
-  background-color: $darkGray;
-  display: flex;
-  padding: .5rem 2rem;
-  font-size: 1rem;
-  font-weight: 300;
-  .footer__content {
-    width: 60%;
-  }
-  .footer__logo {
-    width: 40%;
-    text-align: right;
-    align-self: center;
-    margin-top: 0.5rem 0 -0.5rem 0;
-  }
-}
-
 .hidden {
   opacity: 0;
 }

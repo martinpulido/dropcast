@@ -2,25 +2,18 @@
   position: relative;
   display: flex;
 
-  @for $i from 1 through 4 { // 'through' includes last item (4)
+  @each $currentColor in $colorsList {
+    $i: index($colorsList, $currentColor);
     &:nth-child(#{$i}) {
-      .episode__image {
-        background-image: url($imagesPath+'/photos/#{$i}_edited.png');
+      .episode__media:after {
+        background-color: rgba($currentColor, .2);
       }
     }
   }
-  
+
   &:hover {
     .episode__detail:before {
       width: 100%;
-    }
-
-    @for $i from 1 through 4 { // 'through' includes last item (4)
-      &:nth-child(#{$i}) {
-        .episode__image {
-          background-image: url($imagesPath+'/photos/#{$i}_original.png');
-        }
-      }
     }
   }
 }
@@ -36,13 +29,30 @@
   color: $purple;
 }
 
-.episode__image {
-  background-size: cover;
-  background-position: center;
+.episode__image__container {
+  position: relative;
+  /*background-size: cover;
+  background-position: center;*/
+  display: block;
   width: 100%;
   height: 100%;
+  background-color: $white;
   transition: all .1s ease-in-out;
-  display: block;
+}
+
+.episode__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(100%);
+  opacity: .5;
+  transition-property: filter, opacity;
+  transition-duration: .6s;
+  transition-timing-function: ease-in-out;
 }
 
 .episode__media {
@@ -51,8 +61,19 @@
   transition: .2s ease-out;
   &:after {
     position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    transition: opacity .3s ease-in-out;
+  }
+  &:before {
+    position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 1;
     content: '';
     background-image: url($imagesPath+'/pixel-corner.svg');
     width: 50px;
@@ -62,6 +83,19 @@
   &:hover {
     transform-origin: 0 50%;
     transform: perspective(1000px) rotateY(-10deg) translate3d(-3px,0,0);
+
+    &:after {
+      opacity: 0;
+      transition: opacity .3s ease-in-out;
+    }
+
+    .episode__image {
+      filter: grayscale(0);
+      opacity: 1;
+      transition-property: filter, opacity;
+      transition-duration: .6s;
+      transition-timing-function: ease-in-out;
+    }
   }
 }
 
