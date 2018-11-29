@@ -3,7 +3,9 @@
     <article class="episode">
       <h2 class="episode__number">01</h2>
       <div class="episode__media">
-        <a href="detail.html" class="episode__image"></a>
+        <a href="detail.html" class="episode__image__container">
+          <img src="../assets/images/photos/1_original.png" alt="Linda Watkins" class="episode__image" />
+        </a>
       </div>
       <div class="episode__detail">
         <a href="detail.html" class="episode__title"><h4>Linda Watkins</h4></a>
@@ -13,7 +15,9 @@
     <article class="episode">
       <h2 class="episode__number">02</h2>
       <div class="episode__media">
-        <a href="detail.html" class="episode__image"></a>
+        <a href="detail.html" class="episode__image__container">
+          <img src="../assets/images/photos/2_original.png" alt="Dylan Perry" class="episode__image" />
+        </a>
       </div>
       <div class="episode__detail">
         <a href="detail.html" class="episode__title"><h4>Dylan Perry</h4></a>
@@ -23,7 +27,9 @@
     <article class="episode">
       <h2 class="episode__number">03</h2>
       <div class="episode__media">
-        <a href="detail.html" class="episode__image"></a>
+        <a href="detail.html" class="episode__image__container">
+          <img src="../assets/images/photos/3_original.png" alt="Olivia Valdez" class="episode__image" />
+        </a>
       </div>
       <div class="episode__detail">
         <a href="detail.html" class="episode__title"><h4>Olivia Valdez</h4></a>
@@ -33,7 +39,9 @@
     <article class="episode">
       <h2 class="episode__number">04</h2>
       <div class="episode__media">
-        <a href="detail.html" class="episode__image"></a>
+        <a href="detail.html" class="episode__image__container">
+          <img src="../assets/images/photos/4_original.png" alt="Samuel Chavezy" class="episode__image" />
+        </a>
       </div>
       <div class="episode__detail">
         <a href="detail.html" class="episode__title"><h4>Samuel Chavezy</h4></a>
