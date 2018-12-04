@@ -1,58 +1,53 @@
 <template>
-  <section class="episodes">
-    <article class="episode">
-      <h2 class="episode__number">01</h2>
+  <section class="episodes" v-if="authors !== null">
+
+    <article class="episode" v-for="(author, index) in authors" v-bind:key="index">
+      <h2 class="episode__number">{{getLeadingZeroId(author.id)}}</h2>
       <div class="episode__media">
         <a href="detail.html" class="episode__image__container">
-          <img src="../assets/images/photos/1_original.png" alt="Linda Watkins" class="episode__image" />
+          <img :src="getProfileImg(author.id)" :alt=author.full_name class="episode__image" />
         </a>
       </div>
       <div class="episode__detail">
-        <a href="detail.html" class="episode__title"><h4>Linda Watkins</h4></a>
-        <p class="episode__description">Linda talks about how machine learning models can be used as effective substitutes for classic data structures.</p>
+        <a href="detail.html" class="episode__title"><h4>{{author.full_name}}</h4></a>
+        <p class="episode__description">{{author.summary}}</p>
       </div>
     </article>
-    <article class="episode">
-      <h2 class="episode__number">02</h2>
-      <div class="episode__media">
-        <a href="detail.html" class="episode__image__container">
-          <img src="../assets/images/photos/2_original.png" alt="Dylan Perry" class="episode__image" />
-        </a>
-      </div>
-      <div class="episode__detail">
-        <a href="detail.html" class="episode__title"><h4>Dylan Perry</h4></a>
-        <p class="episode__description">Dylan talks to us about how he started programming, challenges he has faced and what keeps him hooked till this day.</p>
-      </div>
-    </article>
-    <article class="episode">
-      <h2 class="episode__number">03</h2>
-      <div class="episode__media">
-        <a href="detail.html" class="episode__image__container">
-          <img src="../assets/images/photos/3_original.png" alt="Olivia Valdez" class="episode__image" />
-        </a>
-      </div>
-      <div class="episode__detail">
-        <a href="detail.html" class="episode__title"><h4>Olivia Valdez</h4></a>
-        <p class="episode__description">Olivia talks about how machine learning models can be used as effective substitutes for classic data structures.</p>
-      </div>
-    </article>
-    <article class="episode">
-      <h2 class="episode__number">04</h2>
-      <div class="episode__media">
-        <a href="detail.html" class="episode__image__container">
-          <img src="../assets/images/photos/4_original.png" alt="Samuel Chavezy" class="episode__image" />
-        </a>
-      </div>
-      <div class="episode__detail">
-        <a href="detail.html" class="episode__title"><h4>Samuel Chavezy</h4></a>
-        <p class="episode__description">Sam talks to us about how he started programming and what keeps him hooked till this day.</p>
-      </div>
-    </article>
+
+  </section>
+  <section class="episodes" v-else>
+    <span class="loading">Loading authors</span>
   </section>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
+  name: 'authors-list',
+  mounted(){
+    this.getAuthors();
+  },
+  data(){
+    return {
+      index: null,
+      authors: null
+    }
+  },
+  methods: {
+    getAuthors(){
+      axios.get('https://martinpulido.github.io/dropcast/vue/dropcast/api/authors.json')
+            .then((answer) => {
+              this.authors = answer.data;
+            })
+    },
+    getProfileImg(id){
+      return require('../assets/images/photos/'+id+'_original.png');
+    },
+    getLeadingZeroId(id){
+      let leadingZero = (id < 10)? '0'+id : id;
+      return leadingZero;
+    }
+  }
 }
 </script>
 
