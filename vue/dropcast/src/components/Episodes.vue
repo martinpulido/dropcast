@@ -2,7 +2,7 @@
   <section class="episodes" v-if="authors !== null">
 
     <article class="episode" v-for="(author, index) in authors" v-bind:key="index">
-      <h2 class="episode__number">{{getLeadingZeroId(author.id)}}</h2>
+      <h2 class="episode__number" v-html="getLeadingZeroId(author.id)"></h2>
       <div class="episode__media">
         <a href="detail.html" class="episode__image__container">
           <img :src="getProfileImg(author.id)" :alt=author.full_name class="episode__image" />
