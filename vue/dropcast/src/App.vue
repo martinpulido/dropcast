@@ -1,25 +1,8 @@
 <template>
   <div id="app">
-    <div id="site__bg"></div>
-    <div class="main">
 
-      <!-- Navigation component -->
-      <navigation>
-      </navigation>
-
-      <!-- Site component -->
-      <site>
-      </site>
-
-      <!-- Episodes component -->
-      <episodes>
-      </episodes>
-      
-    </div>
-
-    <!-- Foot component -->
-    <foot>
-    </foot>
+    <!-- Home component -->
+    <home></home>
 
   </div>
 </template>
