@@ -1,8 +1,10 @@
 <template>
   <div id="app">
 
-    <!-- Home component -->
-    <home></home>
+    <!-- Home component 
+    <home></home>-->
+
+    <router-view></router-view>
 
   </div>
 </template>

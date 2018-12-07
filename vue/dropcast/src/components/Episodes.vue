@@ -9,7 +9,7 @@
         </a>
       </div>
       <div class="episode__detail">
-        <a href="detail.html" class="episode__title"><h4>{{author.full_name}}</h4></a>
+        <router-link :to="{name: 'episode-detail', params:{id: author.id}}" class="episode__title"><h4>{{author.full_name}}</h4></router-link>
         <p class="episode__description">{{author.summary}}</p>
       </div>
     </article>
