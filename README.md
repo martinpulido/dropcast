@@ -18,7 +18,8 @@ Para ello he creado dos directorios separados en los que estarán alojados la ve
 
 ## Autores
 
-* **Santi Martin** - Desarrollo del interfaz con HTML, CSS, JS (+ jQuery)
+* **[Amy Chen](https://www.amie-chen.com/)** - De la plantilla HTML, CSS, JS
+* **Santi Martin** - De la implementación de VueJS 2 sobre la plantilla de Amy Chen.
 
 ## Licencia
 
