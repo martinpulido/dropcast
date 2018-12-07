@@ -30,8 +30,8 @@ Este proyecto está realizado bajo la licencia MIT.
 * El _layout_ de las páginas _index.html_ y _detail.html_ de la plantilla es distinto, por lo que su ubicación en el HTML no se puede hacer de forma común (dejándolo en el _App.vue_). Creo una componente _Home.vue_ y otro que será _Detail.vue_ que correspondan con _index.html_ y _detail.html_ respectivamente.
 
 ## TODO
-[] Incluir de otra forma los archivos scss comunes a todos los componentes (variables.scss, animation.scss) para no tener que re-incluirlos en cada componente creado.
-[] Investigar cómo hacer que VueJS coja la estructura de los assets en entorno de desarrollo (*/images/photos/original/1.png , /images/photos/edited/1.png, etc*) para diferenciar las imagenes que se llaman igual, pero que están en directorios distintos.
-[x] Cambiar para que las imágenes de *Episodes*, en lugar de cargarse como fondo, se carguen como contenido.
+- [] Incluir de otra forma los archivos scss comunes a todos los componentes (variables.scss, animation.scss) para no tener que re-incluirlos en cada componente creado.
+- [] Investigar cómo hacer que VueJS coja la estructura de los assets en entorno de desarrollo (*/images/photos/original/1.png , /images/photos/edited/1.png, etc*) para diferenciar las imagenes que se llaman igual, pero que están en directorios distintos.
+- [x] Cambiar para que las imágenes de *Episodes*, en lugar de cargarse como fondo, se carguen como contenido.
 [x] Relacionado con el punto anterior, el estado 'editado' (estado normal) de las imagenes de *Episodes* se podría hacer con filtros CSS (quitandolo en el estado 'hover'). Asi ahorraríamos peticiones al servidor.
-[] ~~Solventar el problema con la ruta de _build.js_ y las rutas de detalle en el navegador cuando no se accede desde la Home~~. El problema parece que era originado cuando cambie las rutas en _webpack.config.js_ para que cogiera de forma relativa el _build.js_ y funcionara en GitHub pages sin configurar mucho.
+- [] ~~Solventar el problema con la ruta de _build.js_ y las rutas de detalle en el navegador cuando no se accede desde la Home~~. El problema parece que era originado cuando cambie las rutas en _webpack.config.js_ para que cogiera de forma relativa el _build.js_ y funcionara en GitHub pages sin configurar mucho.
