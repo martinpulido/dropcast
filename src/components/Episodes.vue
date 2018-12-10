@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getAuthors(){
-      axios.get('https://martinpulido.github.io/dropcast/vue/dropcast/api/authors.json')
+      axios.get('https://martinpulido.github.io/dropcast/api/authors.json')
             .then((answer) => {
               this.authors = answer.data;
             })

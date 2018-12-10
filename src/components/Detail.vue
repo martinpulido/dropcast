@@ -70,7 +70,7 @@ export default {
   methods: {
     getEpisodeData(id){
       console.log('episode id: ' + id);
-      axios.get('https://martinpulido.github.io/dropcast/vue/dropcast/api/authors.json')
+      axios.get('https://martinpulido.github.io/dropcast/api/authors.json')
             .then((answer) => {
               let episodes = answer.data;
               episodes.forEach(episode => {
