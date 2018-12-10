@@ -12,7 +12,41 @@
         <h1 class="site__title site__title--separator">{{episodeDetail.full_name}}</h1>
       </div>
       <div class="right">
-        <img :src="getProfileImg(episodeDetail.id)" :alt=episodeDetail.full_name class="episode__image" />
+        <!--img :src="getProfileImg(episodeDetail.id)" :alt=episodeDetail.full_name class="episode__image" / -->
+        <img src="../assets/images/photos/1_original.png" alt="" class="episode__image">
+        <div class="audio-player site__playbar">
+          <div class="loading">
+            <div class="spinner"></div>
+          </div>
+          <button class="play-pause-btn play"></button>
+          <div class="controls">
+            <span class="current-time">0:00</span>
+            <div class="slider" data-direction="horizontal">
+              <div class="progress">
+                <div class="pin" id="progress-pin" data-method="rewind"></div>
+              </div>
+            </div>
+            <span class="total-time">0:00</span>
+          </div>
+
+          <audio preload="true">
+            <source src="assets/audio/example.ogg" type="audio/ogg" />
+            <source src="assets/audio/example.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <h4 class="site__secondary_title">Show Notes</h4>
+        <p class="site__description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the <a href="#">industry's standard</a> dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the <a href="#">1960s</a> with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make <a href="#">a type specimen book</a>. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <div class="site__navigation">
+          <!-- toggle on the previous as needed -->
+          <a href="#" class="site__navigation_items site__navigation_items--left hidden">
+            <label for="">Previous Episode</label>
+            <h4>Dylan Perry</h4>
+          </a>
+          <a href="#" class="site__navigation_items site__navigation_items--right">
+            <label for="">Next Episode</label>
+            <h4>Dylan Perry</h4>
+          </a>
+        </div>
       </div>
     </section>
     
@@ -89,6 +123,7 @@ export default {
     .right {
       .episode__image {
         width: 100px;
+        height: 100%;
         float: left;
         margin: 1.5rem 1rem 0 0;
         border-radius: 2px;
@@ -103,10 +138,13 @@ export default {
   @media only screen and (min-width : 1000px) {
     /* page detail */
     .page--detail {
+      position: relative;
       flex-direction: row;
+      min-height: 100%;
       .site {
         display: flex;
         padding: 0 0 0 60px;
+        min-height: 100%;
       }
     }
 
