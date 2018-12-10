@@ -2,8 +2,10 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-dist/
+api/
+src/
 web/
+.babelrc
 
 # Editor directories and files
 .idea
