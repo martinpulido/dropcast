@@ -12,8 +12,7 @@
         <h1 class="site__title site__title--separator">{{episodeDetail.full_name}}</h1>
       </div>
       <div class="right">
-        <!--img :src="getProfileImg(episodeDetail.id)" :alt=episodeDetail.full_name class="episode__image" / -->
-        <img src="../assets/images/photos/1_original.png" alt="" class="episode__image">
+        <img :src="getProfileImg(episodeDetail.id)" :alt=episodeDetail.full_name class="episode__image" />
         <div class="audio-player site__playbar">
           <div class="loading">
             <div class="spinner"></div>
