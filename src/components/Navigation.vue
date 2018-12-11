@@ -1,10 +1,12 @@
 <template>
   <nav>
     <div class="logo nav__logo">
-      <a href="index.html"><img src="../assets/images/logo.svg" alt="logo"/></a>
+      <router-link :to="{name: 'root'}">
+        <img src="../assets/images/logo.svg" alt="Dropcast logo"/>
+      </router-link>
     </div>
     <ul class="nav__list">
-      <li class="nav__item"><a href="#">Episodes</a></li>
+      <li class="nav__item"><router-link :to="{name: 'root'}">Episodes</router-link></li>
     </ul>
     <ul class="nav__social">
       <li v-for="(socialIcon, index) in socialIcons" v-bind:key="index">

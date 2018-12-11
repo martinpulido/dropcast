@@ -11,8 +11,8 @@ import Episodes from './components/Episodes.vue'
 Vue.use(VueRouter);
 
 const routes = [
-  {path: '/', component: Home},
-  {path: '/home', component: Home},
+  {path: '/', name: 'root', component: Home},
+  {path: '/home', name: 'home', component: Home},
   {path: '/episode/:id', name: 'episode-detail', component: Detail}
 ];
 
