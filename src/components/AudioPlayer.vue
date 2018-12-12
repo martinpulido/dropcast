@@ -15,7 +15,7 @@
       <span class="total-time">0:00</span>
     </div>
 
-    <audio preload="true" v-if="audiofiles !== null" @canplay="makePlay()" @timeupdate="updateProgress()">
+    <audio preload="true" v-if="audiofiles !== null" @canplay="makePlay()" @loadedmetadata="setTotalDuration()" @timeupdate="updateProgress()">
       <source v-for="(audio, index) in audiofiles" v-bind:key="index" :src="getFilePath(audio.file)" :type=audio.type  />
     </audio>
   </div>
@@ -35,6 +35,7 @@
       this.playpauseBtn = this.audioPlayer.querySelector('.play-pause-btn');
       this.progress = this.audioPlayer.querySelector('.progress');
       this.currentTime = this.audioPlayer.querySelector('.current-time');
+      this.totalTime = this.audioPlayer.querySelector('.total-time');
 
       console.log(this.player);
     },
@@ -45,7 +46,8 @@
         loading: null,
         playpauseBtn: null,
         progress: null,
-        currentTime: null
+        currentTime: null,
+        totalTime: null
       }
     },
     methods: {
@@ -67,6 +69,9 @@
           this.playpauseBtn.classList.add('play');
           this.player.pause();
         }  
+      },
+      setTotalDuration(){
+        this.totalTime.textContent = this.formatTime(this.player.duration);
       },
       updateProgress() {
         let current = this.player.currentTime;
