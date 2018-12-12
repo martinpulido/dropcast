@@ -7,6 +7,7 @@ import Navigation from './components/Navigation.vue'
 import Site from './components/Site.vue'
 import Foot from './components/Foot.vue'
 import Episodes from './components/Episodes.vue'
+import AudioPlayer from './components/AudioPlayer.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,8 @@ Vue.component('navigation', Navigation);
 Vue.component('site', Site);
 Vue.component('foot', Foot);
 Vue.component('episodes', Episodes);
+Vue.component('audio-player', AudioPlayer);
+
 
 new Vue({
   el: '#app',
