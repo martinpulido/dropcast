@@ -26,9 +26,6 @@
   export default {
     props: ['audiofiles'],
     mounted(){
-      console.log('ln: ' + this.audiofiles[0].file);
-      console.log(this.getFilePath(this.audiofiles[0].file));
-
       this.audioPlayer = document.querySelector('.audio-player');
       this.player = this.audioPlayer.querySelector('audio');
       this.loading = this.audioPlayer.querySelector('.loading');
@@ -36,8 +33,6 @@
       this.progress = this.audioPlayer.querySelector('.progress');
       this.currentTime = this.audioPlayer.querySelector('.current-time');
       this.totalTime = this.audioPlayer.querySelector('.total-time');
-
-      console.log(this.player);
     },
     data(){
       return {
