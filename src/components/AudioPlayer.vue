@@ -1,4 +1,5 @@
 <template>
+
   <div class="audio-player site__playbar">
     <div class="loading">
       <div class="spinner"></div>
@@ -14,25 +15,43 @@
       <span class="total-time">0:00</span>
     </div>
 
-    <audio preload="true" v-if="audiofiles !== null" >
-      <!-- source :src="getFilePath(audio.file)" /-->
+    <audio preload="true" v-if="audiofiles !== null" @canplay="makePlay()">
       <source v-for="(audio, index) in audiofiles" v-bind:key="index" :src="getFilePath(audio.file)" :type=audio.type  />
     </audio>
   </div>
+
 </template>
 
 <script>
-  //import Player from './assets/js/player.js';
   export default {
     props: ['audiofiles'],
     mounted(){
       console.log('ln: ' + this.audiofiles[0].file);
       console.log(this.getFilePath(this.audiofiles[0].file));
+
+      this.audioPlayer = document.querySelector('.audio-player');
+      this.player = this.audioPlayer.querySelector('audio');
+      this.loading = this.audioPlayer.querySelector('.loading');
+      this.playpauseBtn = this.audioPlayer.querySelector('.play-pause-btn');
+
+      console.log(this.player);
+    },
+    data(){
+      return {
+        audioPlayer: null,
+        player: null,
+        loading: null,
+        playpauseBtn: null
+      }
     },
     methods: {
       getFilePath(name){
         //console.log('Nombre archivo: ' + name);
         return require('../assets/audio/'+name);
+      },
+      makePlay() {
+        this.playpauseBtn.style.display = 'block';
+        this.loading.style.display = 'none';
       }
     }
   }
