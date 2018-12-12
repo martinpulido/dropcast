@@ -4,7 +4,7 @@
     <div class="loading">
       <div class="spinner"></div>
     </div>
-    <button class="play-pause-btn play"></button>
+    <button class="play-pause-btn play" @click="togglePlay()"></button>
     <div class="controls">
       <span class="current-time">0:00</span>
       <div class="slider" data-direction="horizontal">
@@ -52,6 +52,17 @@
       makePlay() {
         this.playpauseBtn.style.display = 'block';
         this.loading.style.display = 'none';
+      },
+      togglePlay() {
+        if(this.player.paused) {
+          this.playpauseBtn.classList.remove('play');
+          this.playpauseBtn.classList.add('pause');
+          this.player.play();
+        } else {
+          this.playpauseBtn.classList.remove('pause');
+          this.playpauseBtn.classList.add('play');
+          this.player.pause();
+        }  
       }
     }
   }
