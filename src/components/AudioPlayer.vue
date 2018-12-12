@@ -15,7 +15,7 @@
       <span class="total-time">0:00</span>
     </div>
 
-    <audio preload="true" v-if="audiofiles !== null" @canplay="makePlay()" @loadedmetadata="setTotalDuration()" @timeupdate="updateProgress()">
+    <audio preload="true" v-if="audiofiles !== null" @canplay="makePlay()" @loadedmetadata="setTotalDuration()" @timeupdate="updateProgress()" @ended="resetPlayer()">
       <source v-for="(audio, index) in audiofiles" v-bind:key="index" :src="getFilePath(audio.file)" :type=audio.type  />
     </audio>
   </div>
@@ -54,6 +54,10 @@
       getFilePath(name){
         //console.log('Nombre archivo: ' + name);
         return require('../assets/audio/'+name);
+      },
+      resetPlayer(){
+        this.playpauseBtn.classList.add('play');
+        this.player.currentTime = 0;
       },
       makePlay() {
         this.playpauseBtn.style.display = 'block';
