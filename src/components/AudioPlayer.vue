@@ -126,6 +126,10 @@
       margin-right: 5rem;
       border-radius: 4px;
     }
+
+    .site__secondary_title {
+      display: block;
+    }
   }
 
 </style>
