@@ -8,6 +8,7 @@ import Site from './components/Site.vue'
 import Foot from './components/Foot.vue'
 import Episodes from './components/Episodes.vue'
 import AudioPlayer from './components/AudioPlayer.vue';
+import SiteNavigation from './components/SiteNavigation.vue';
 
 Vue.use(VueRouter);
 
@@ -23,6 +24,7 @@ const router = new VueRouter({
 });
 
 Vue.component('home', Home);
+Vue.component('site-navigation', SiteNavigation);
 Vue.component('detail', Detail);
 Vue.component('navigation', Navigation);
 Vue.component('site', Site);

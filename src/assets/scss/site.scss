@@ -58,11 +58,11 @@
     flex-direction: column;
     justify-content: center;
     padding: 1rem;
-    label {
+    .subtitle {
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    h4 {
+    .title {
       margin: 0;
       font-size: 1.2rem;
       line-height: 1.5rem;
@@ -72,7 +72,7 @@
     }
   }
   .site__navigation_items--right {
-    label {
+    .subtitle {
       color: darken($orange, 20%);
     }
     background-color: $orange;
@@ -80,20 +80,20 @@
     text-align: right;
     &:hover {
       background-color: darken($orange, 20%);
-      label {
+      .subtitle {
         color: darken($orange, 50%);
       }
     }
   }
   .site__navigation_items--left {
-    label {
+    .subtitle {
       color: darken($green, 20%);
     }
     background-color: $green;
     padding-right: 5rem;
     &:hover {
       background-color: darken($green, 20%);
-      label {
+      .subtitle {
         color: darken($green, 50%);
       }
     }

@@ -8,7 +8,7 @@
     <section class="site">
       <div id="site__bg"></div>
       <div class="left">
-        <label for="" class="site__label">Episode #{{episodeDetail.id}}</label>
+        <span for="" class="site__label">Episode #{{episodeDetail.id}}</span>
         <h1 class="site__title site__title--separator">{{episodeDetail.full_name}}</h1>
       </div>
       <div class="right">
@@ -17,18 +17,11 @@
         <audio-player :audiofiles=episodeDetail.audio></audio-player>
 
         <h4 class="site__secondary_title">Show Notes</h4>
-        <p class="site__description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the <a href="#">industry's standard</a> dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the <a href="#">1960s</a> with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make <a href="#">a type specimen book</a>. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        <div class="site__navigation">
-          <!-- toggle on the previous as needed -->
-          <a href="#" class="site__navigation_items site__navigation_items--left hidden">
-            <label for="">Previous Episode</label>
-            <h4>Dylan Perry</h4>
-          </a>
-          <a href="#" class="site__navigation_items site__navigation_items--right">
-            <label for="">Next Episode</label>
-            <h4>Dylan Perry</h4>
-          </a>
-        </div>
+        <p class="site__description" v-html="episodeDetail.description"></p>
+        
+        <!-- Episodes navigation -->
+        <site-navigation :prevEpisode=this.prevEpisode :nextEpisode=this.nextEpisode></site-navigation>
+
       </div>
     </section>
     
@@ -46,19 +39,31 @@ export default {
   data(){
     return {
       id: null,
-      episodeDetail: null
+      episodeDetail: null,
+      prevEpisode: null,
+      nextEpisode: null
     }
   },
   methods: {
     getEpisodeData(id){
-      console.log('episode id: ' + id);
       axios.get('https://martinpulido.github.io/dropcast/api/authors.json')
             .then((answer) => {
               let episodes = answer.data;
-              episodes.forEach(episode => {
+              this.totalEpisodes = episodes.length;
+              episodes.forEach((episode, index) => {
                 if(parseInt(episode.id) === parseInt(id)){
                   this.episodeDetail = episode;
-                  console.log(this.episodeDetail);
+                  console.log(index);
+                  let _ind = Number(index),
+                      _indPrev = _ind - 1,
+                      _indNext = _ind + 1;
+
+                  if(_indPrev >= 0){
+                    this.prevEpisode = episodes[_indPrev];
+                  }
+                  if(_indNext < this.totalEpisodes){
+                    this.nextEpisode = episodes[_indNext];
+                  }
                 }
               });
               
