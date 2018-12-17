@@ -54,7 +54,7 @@ module.exports = {
 - [x] Cambiar para que las imágenes de *Episodes*, en lugar de cargarse como fondo, se carguen como contenido.
 - [x] Relacionado con el punto anterior, el estado 'editado' (estado normal) de las imagenes de *Episodes* se podría hacer con filtros CSS (quitandolo en el estado 'hover'). Asi ahorraríamos peticiones al servidor.
 - [ ] ~~Solventar el problema con la ruta de _build.js_ y las rutas de detalle en el navegador cuando no se accede desde la Home~~. El problema parece que era originado cuando cambie las rutas en _webpack.config.js_ para que cogiera de forma relativa el _build.js_ y funcionara en GitHub pages sin configurar mucho.
-- [ ] Relacionado con el punto anterior, tras probar varios (recursos)[#recursos] de generar el _build_ para que junto con GitHub pages funcionen las rutas y no conseguirlo, dejo este punto en *pendiente* para hacer más adelante.
+- [ ] Relacionado con el punto anterior, tras probar varios [recursos](#recursos) de generar el _build_ para que junto con GitHub pages funcionen las rutas y no conseguirlo, dejo este punto en *pendiente* para hacer más adelante.
 
 ## Recursos
 - [Tutorial para empezar con vuejs](https://github.com/cristinafsanz/vuejs-primeros-pasos)
