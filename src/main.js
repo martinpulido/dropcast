@@ -15,7 +15,11 @@ Vue.use(VueRouter);
 const routes = [
   {path: '/', name: 'root', component: Home},
   {path: '/home', name: 'home', component: Home},
-  {path: '/episode/:id', name: 'episode-detail', component: Detail}
+  {path: '/episode/:id', name: 'episode-detail', component: Detail,
+    children: [
+      {path: '', component: SiteNavigation}
+    ]
+  }
 ];
 
 const router = new VueRouter({

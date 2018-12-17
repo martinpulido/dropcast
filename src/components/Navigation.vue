@@ -13,7 +13,9 @@
         <a :href="socialIcon.url" class="nav_social__item"><i :class="socialIcon.icon"></i></a>
       </li>
     </ul>
-    </nav>
+    <router-link :to="{name: 'episode-detail', params:{id: 2}}">Ir al 2</router-link>
+    <router-link :to="{name: 'episode-detail', params:{id: 3}}">Ir al 3</router-link>
+  </nav>
 </template>
 
 <script>

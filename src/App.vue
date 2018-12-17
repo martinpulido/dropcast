@@ -1,11 +1,12 @@
 <template>
   <div id="app" class="app-container">
 
-    <!-- Home component 
-    <home></home>-->
+    <router-link :to="{name: 'episode-detail', params:{id: 1}}" style="display: inline-block; font-size: 1em; color: white; text-align: left; padding-left: 200px; position: relative; z-index: 2000;">Al 1</router-link>
+    <router-link :to="{name: 'episode-detail', params:{id: 2}}" style="display: inline-block; font-size: 1em; color: white; text-align: left; padding-left: 200px; position: relative; z-index: 2000;">Al 2</router-link>
+    <router-link :to="{name: 'episode-detail', params:{id: 3}}" style="display: inline-block; font-size: 1em; color: white; text-align: left; padding-left: 200px; position: relative; z-index: 2000;">Al 3</router-link>
+    <router-link :to="{name: 'episode-detail', params:{id: 4}}" style="display: inline-block; font-size: 1em; color: white; text-align: left; padding-left: 200px; position: relative; z-index: 2000;">Al 4</router-link>
 
     <router-view></router-view>
-
   </div>
 </template>
 

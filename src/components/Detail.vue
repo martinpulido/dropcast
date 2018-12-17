@@ -1,10 +1,9 @@
 <template>
   <div class="page--detail">
     
-    <!-- Navigation component -->
-    <navigation>
-    </navigation>
-
+    <h2>Este es el episodio #{{this.id}}</h2>
+    
+    <!--
     <section class="site">
       <div id="site__bg"></div>
       <div class="left">
@@ -19,12 +18,12 @@
         <h4 class="site__secondary_title">Show Notes</h4>
         <p class="site__description" v-html="episodeDetail.description"></p>
         
-        <!-- Episodes navigation -->
+
         <site-navigation :prevEpisode=this.prevEpisode :nextEpisode=this.nextEpisode></site-navigation>
 
       </div>
     </section>
-    
+    -->
   </div>
 </template>
 
